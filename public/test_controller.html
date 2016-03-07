@@ -4,9 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <title>Test Controller</title>
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-    <script src="https://cdn.socket.io/socket.io-1.4.5.js"></script>
-    <!--<script src="/socket.io/socket.io.js"></script>-->
+    <!--<script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>-->
+    <!--<script src="https://cdn.socket.io/socket.io-1.4.5.js"></script>-->
+    <!--<script src="/socket.io/socket.io.js"></script>
+    <script src="js/jquery.min.js"></script>-->
+    <script src="js/socket.io-1.4.5.js"></script>
+    <script src="js/jquery.min.js"></script>
 </head>
 <style>
     body {
@@ -41,7 +44,6 @@
 
         <p>Event is OFF</p>
         
-        <button>test</button>
         
     </div>
 
@@ -81,7 +83,7 @@ $(document).ready(function() {
         socket.emit('pirstatus', false);
     });
     
-    $('button').text('HELLO WORLD');
+    
 });
 
     </script>

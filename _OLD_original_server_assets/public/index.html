@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        body {
+            background-color: #555555;
+            color: #fff;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        #status {
+            margin-top: 50px;
+            text-align: center;
+            font-size: 150px;
+        }
+    </style>
+    <script src="js/socket.io-1.4.5.js"></script>
+    <!--<script src="https://cdn.socket.io/socket.io-1.4.5.js"></script>-->
+    <script>
+        window.onload = function() {
+
+            var messages = [];
+            var socket = io.connect('/');
+            //var socket = io.connect('http://xxxxxxxxxxxxxx');
+            var status = document.getElementById("status");
+
+            socket.on('pirstatus', function(data) {
+                if (data) {
+                    status.innerHTML = "Success";
+                    document.body.style.backgroundColor = "green";
+                } else {
+                    status.innerHTML = "No success";
+                    document.body.style.backgroundColor = "red";
+                }
+            });
+        }
+        
+        //NOTE: Remember this: ssh bernardobozo@10.50.7.37
+        
+        /*
+         * Instructions:
+         * 
+         * 1. From the raspberry's console login to the PC/Mac console via SSH 
+         * ssh username@IP
+         * type yes and proceed
+         * type the PC's profile password
+         * 
+         * 2. Once logged into the pc we need to kick the localhost server:
+         * navigate to the webapp directory in the console using the cd command
+         * once in there type: node server.js
+         * 
+         * 3. If correct the console should come back with "Listening on port 3700" (where 3700 is the localhost assigned server).
+         * navigate to the trigger page on the PI by typing http://1.1.1.1:3700/test_controller.html (where 1.1.1.1 is the PC's IP).
+         * On the pc, navigate to http://localhost:3700/ in order to see the webappworking with the triggered events.
+         * 
+         * 4. Profit.
+         * 
+         * */
+        
+        //FUTURE: When we transfer the app to the different PCs on the day of the event, we will need each pc's SSH login details (username@ipaddress - password) in order to start their own localhosts.
+        
+    </script>
+</head>
+
+<body>
+    <div id="status">Awaiting Socket</div>
+</body>
+
+</html>

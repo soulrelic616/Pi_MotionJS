@@ -2,43 +2,38 @@
 <html>
 
 <head>
-    <style>
-        body {
-            background-color: #555555;
-            color: #fff;
-            font-family: Arial, Helvetica, sans-serif;
-        }
-        #status {
-            margin-top: 50px;
-            text-align: center;
-            font-size: 150px;
-        }
-    </style>
+   <title>RWD Wall</title>
+    <link rel="stylesheet" type="text/css" media="screen" href="css/styles.css" />
     <script src="js/socket.io-1.4.5.js"></script>
-    <!--<script src="https://cdn.socket.io/socket.io-1.4.5.js"></script>-->
-    <script>
-        window.onload = function() {
-
-            var messages = [];
-            var socket = io.connect('/');
-            //var socket = io.connect('http://xxxxxxxxxxxxxx');
-            var status = document.getElementById("status");
-
-            socket.on('pirstatus', function(data) {
-                if (data) {
-                    status.innerHTML = "Success";
-                    document.body.style.backgroundColor = "green";
-                } else {
-                    status.innerHTML = "No success";
-                    document.body.style.backgroundColor = "red";
-                }
-            });
-        }
-    </script>
+    <script src="js/receiver.js"></script>
+    
 </head>
 
 <body>
     <div id="status">Awaiting Socket</div>
+    
+    <section id="Container">
+        <!--video section: both 'screensaver' and transition profile videos load here-->
+        <div id="video_container">
+            <video autoplay loop>
+                <source src="video/test_video.mp4" type="video/mp4">
+            </video>
+        </div>
+        
+        <!--header is used for heading titles-->
+        <header>
+            <h2 class="preheader">From clinical trials to clinical practice:</h2>
+            <h1>bring real-world data to life</h1>
+        </header>
+        
+        
+        
+        <!--Footer used for main footnotes-->
+        <footer>
+            
+        </footer>
+    </section>
+    
 </body>
 
 </html>

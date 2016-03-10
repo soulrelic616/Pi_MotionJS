@@ -154,14 +154,23 @@ img{
 
 //Main body styles
 body{
-    background: @w_dark_blue;
+    background: black;
     .g_book;
     .noselect;
+    color: @w_gray;
+    
     //Status testing div
     div#status{
-        color: @w_gray;
         text-align: center;
         position: absolute;
+    }
+    button#negative{
+        position: absolute;
+        top:40px;
+    }
+    div.current{
+        position: absolute;
+        top:80px;
     }
     
     //container
@@ -180,6 +189,14 @@ body{
             video{
                 width: 1620px;
                 height: 1920px;
+                .ease;
+                &#screensaver{
+                    z-index: 10;
+                }
+                &.Profile{
+                    opacity: 0;
+                    z-index: 8;
+                }
             }
         }
         
@@ -199,5 +216,7 @@ body{
             }
         }
         
+        
+        //NOTE: Profile classes go here
     }
 }

@@ -9,7 +9,9 @@
     <!--<script src="/socket.io/socket.io.js"></script>
     <script src="js/jquery.min.js"></script>-->
     <script src="js/socket.io-1.4.5.js"></script>
+    <!--<script src="//localhost:3700/js/socket.io-1.4.5.js"></script>-->
     <script src="js/jquery.min.js"></script>
+    <!--<script src="js/gpio.js"></script>-->
 </head>
 <style>
     body {
@@ -70,19 +72,26 @@
 $(document).ready(function() {
 
     var socket = io.connect('/');
-    
     socket.emit('pirstatus', false);
     
-    $('div.event').mouseenter(function(){
+    var status
+    
+    /*$('div.event').mouseenter(function(){
         $('p').text('Event is ON');
         socket.emit('pirstatus', true);
+        console.log(status);
     });
     
     $('div.event').mouseleave(function(){
         $('p').text('Event is OFF');
         socket.emit('pirstatus', false);
-    });
+        console.log(status);
+    });*/
     
+    socket.on('connect', function(){
+        console.log('Connection successful');
+       // require('gpio');
+    });
     
 });
 

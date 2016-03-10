@@ -4,6 +4,7 @@
 <head>
    <title>RWD Wall</title>
     <link rel="stylesheet" type="text/css" media="screen" href="css/styles.css" />
+    <script src="js/jquery.min.js"></script>
     <script src="js/socket.io-1.4.5.js"></script>
     <script src="js/receiver.js"></script>
     
@@ -12,12 +13,19 @@
 <body>
     <div id="status">Awaiting Socket</div>
     
+    <button id="negative">TEST</button>
+    
+    <div class="current">???</div>
+    
     <section id="Container">
         <!--video section: both 'screensaver' and transition profile videos load here-->
         <div id="video_container">
-            <video autoplay loop>
+            <video id="screensaver" autoplay loop muted>
                 <source src="video/test_video.mp4" type="video/mp4">
             </video>
+            <!--<video class="Profile" id="Profile_1">
+                <source src="video/test_video.mp4" type="video/mp4">
+            </video>-->
         </div>
         
         <!--header is used for heading titles-->
